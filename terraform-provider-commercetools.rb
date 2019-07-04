@@ -2,14 +2,14 @@
 class TerraformProviderCommercetools < Formula
   desc "Terraform provider for Commercetools"
   homepage "https://github.com/labd/terraform-provider-commercetools"
-  version "0.13.1"
+  version "0.14.0"
 
   if OS.mac?
-    url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.13.1/terraform-provider-commercetools-0.13.1-darwin-amd64.zip"
-    sha256 "ee1181dfcca79c6e04671c3cc7510d23bb152f18cb9b1d97b8be7a3476cc0b43"
+    url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.14.0/terraform-provider-commercetools-0.14.0-darwin-amd64.zip"
+    sha256 "d92609a831bff7c2d48311319afa97ebab0122a0fbe03dda92e7c41ba19b9ae8"
   elsif OS.linux?
-    url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.13.1/terraform-provider-commercetools-0.13.1-linux-amd64.zip"
-    sha256 "abe9acd9c5d3f9ba3ab458d1a2c77be549637fb23a11577245e278597cb3a36e"
+    url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.14.0/terraform-provider-commercetools-0.14.0-linux-amd64.zip"
+    sha256 "641f3b3e8b4a87de562cb99b5dc24e5a70c94880863d44dd52493c0c7fb23c38"
   end
 
   def install
