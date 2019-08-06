@@ -2,24 +2,24 @@
 class TerraformProviderCommercetools < Formula
   desc "Terraform provider for Commercetools"
   homepage "https://github.com/labd/terraform-provider-commercetools"
-  version "0.16"
+  version "0.17"
 
   if OS.mac?
-    url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.16/terraform-provider-commercetools-0.16-darwin-amd64.zip"
-    sha256 "db486c79b96aa22aba616373d6a91569a14863a4c657448d7117caf344bf83cb"
+    url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.17/terraform-provider-commercetools-0.17-darwin-amd64.zip"
+    sha256 "e3a4ae178ddf62b7aa41d64297fe820b310afd2b94882d17e459bb4b0d8f65e6"
   elsif OS.linux?
-    url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.16/terraform-provider-commercetools-0.16-linux-amd64.zip"
-    sha256 "ed862f8132d4a5677e7c277445ac513410d88b250fa2c2415acd95cc680231d6"
+    url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.17/terraform-provider-commercetools-0.17-linux-amd64.zip"
+    sha256 "71a4e8cb48ec0b6577763f200bd8e72ea70018888fc1665c53182586fdb3cb1c"
   end
 
   def install
-    bin.install "terraform-provider-commercetools_v0.16"
+    bin.install "terraform-provider-commercetools_v0.17"
   end
 
   def caveats; <<~EOS
     After installation, you must symlink the provider into Terraform's plugins directory.
     mkdir -p ~/.terraform.d/plugins/
-    ln -sf /usr/local/Cellar/terraform-provider-commercetools/$VERSION/bin/terraform-provider-commercetools_v0.16 ~/.terraform.d/plugins/terraform-provider-commercetools
+    ln -sf /usr/local/Cellar/terraform-provider-commercetools/$VERSION/bin/terraform-provider-commercetools_v0.17 ~/.terraform.d/plugins/terraform-provider-commercetools
     Symlinking is necessary because Homebrew is sandboxed and cannot write to your home directory.
     Replace $VERSION above.
     If Homebrew is installing somewhere other than /usr/local/Cellar, update the path as well.
@@ -27,6 +27,6 @@ class TerraformProviderCommercetools < Formula
   end
 
   test do
-    system "#{bin}/terraform-provider-commercetools_v0.16", "-h"  # running bin directly gives error, exit code 1
+    system "#{bin}/terraform-provider-commercetools_v0.17", "-h"  # running bin directly gives error, exit code 1
   end
 end
