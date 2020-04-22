@@ -2,27 +2,27 @@
 class TerraformProviderCommercetools < Formula
   desc "Terraform provider for Commercetools"
   homepage "https://github.com/labd/terraform-provider-commercetools"
-  version "0.21.0"
+  version "0.21.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.21.0/terraform-provider-commercetools-0.21.0-darwin-amd64.zip"
-    sha256 "36a6ebe84cf5ae14b46b3cd6ec78908fe8133acbdc0d8c5f8c90ff929d389c2b"
+    url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.21.1/terraform-provider-commercetools-0.21.1-darwin-amd64.zip"
+    sha256 "2d32cfd7ba3926c09b4ee2c21a1e3a093af57a2371a0ede91055d8f3532073b2"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.21.0/terraform-provider-commercetools-0.21.0-linux-amd64.tar.gz"
-      sha256 "7835a0e4ca81e9b7acc51a66b9957c4e453bf0f1bd06081f2f79ccadac870baa"
+      url "https://github.com/labd/terraform-provider-commercetools/releases/download/0.21.1/terraform-provider-commercetools-0.21.1-linux-amd64.tar.gz"
+      sha256 "1f83135baa6d157c7a48919f2440540f29188d54c672c397aaf476cd30d59460"
     end
   end
 
   def install
-    bin.install "terraform-provider-commercetools_v0.21.0"
+    bin.install "terraform-provider-commercetools_v0.21.1"
   end
 
   def caveats; <<~EOS
     After installation, you must symlink the provider into Terraform's plugins directory.
     mkdir -p ~/.terraform.d/plugins/
-    ln -sf /usr/local/Cellar/terraform-provider-commercetools/$VERSION/bin/terraform-provider-commercetools_v0.21.0 ~/.terraform.d/plugins/terraform-provider-commercetools
+    ln -sf /usr/local/Cellar/terraform-provider-commercetools/$VERSION/bin/terraform-provider-commercetools_v0.21.1 ~/.terraform.d/plugins/terraform-provider-commercetools
     Symlinking is necessary because Homebrew is sandboxed and cannot write to your home directory.
     Replace $VERSION above.
     If Homebrew is installing somewhere other than /usr/local/Cellar, update the path as well.
@@ -30,6 +30,6 @@ class TerraformProviderCommercetools < Formula
   end
 
   test do
-    system "#{bin}/terraform-provider-commercetools_v0.21.0", "-h"  # running bin directly gives error, exit code 1
+    system "#{bin}/terraform-provider-commercetools_v0.21.1", "-h"  # running bin directly gives error, exit code 1
   end
 end
